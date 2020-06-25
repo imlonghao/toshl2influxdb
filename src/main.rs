@@ -23,6 +23,7 @@ fn main() {
                 continue;
             }
         };
+        println!("{}", money);
         match write_point(money, &dburl, &dbuser, &dbpass) {
             Ok(x) => x,
             Err(e) => {
