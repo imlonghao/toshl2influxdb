@@ -13,7 +13,7 @@ fn main() {
     let db = influxdb::InfluxDB::new(dburl, dbuser, dbpass);
     let mut rng = rand::thread_rng();
     loop {
-        let minute = rng.gen_range(1, 60);
+        let minute = rng.gen_range(1..60);
         let money = match fetch_toshl(&token) {
             Ok(x) => x,
             Err(e) => {
